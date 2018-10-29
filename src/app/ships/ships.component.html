@@ -1,0 +1,16 @@
+<p>
+  ships works!
+</p>
+<div>
+  <button (click)='showShips()'>Show Ships</button>
+</div>
+<div *ngIf="ships" class="shipsContainer">
+  <!-- <div *ngFor="let ship of ships"
+  class="ship"> -->
+  <div>
+    <!-- <p>{{ ship.results.name }}</p>
+    <p>{{ ship }}</p> -->
+    <p> {{ ships.results[0] }}</p>
+  </div>
+</div>
+<!-- </div> -->

@@ -1,0 +1,31 @@
+<!-- <div>
+  <div>
+    <select (change)="onSelectedValue($event)">
+      <option value="films">Films</option>
+      <option value="people">People</option>
+      <option value="starships">Ships</option>
+    </select>
+  </div>
+  <div>
+    <input #search type="search">
+    <button (click)="onSearchSubmit(search.value)" type="submit">Search!</button>
+  </div>
+</div> -->
+
+<div>
+  <form [formGroup]="starWarsForm" (ngSubmit)="onSearchSubmit()">
+    <select formControlName="selectValue">
+      <option value="films">Films</option>
+      <option value="people">People</option>
+      <option value="starships">Ships</option>
+    </select>
+    <input formControlName="inputValue" type="search">
+    <button type="submit">Search!</button>
+  </form>
+  <div *ngIf="searchResults">
+    <ul *ngFor="let result of searchResults.results">
+      <li> {{ result | json }} </li>
+    </ul>
+  </div>
+</div>
+
